@@ -1,0 +1,17 @@
+version: "3"
+services:
+  php:
+    build: .
+    image: "ali00h/laravel-nuxt:v4"
+    container_name: DockerfileAll
+    restart: always
+    ports:
+      - "18094:80"
+    environment:
+      TZ: Asia/Tehran
+      MAX_UPLOAD_SIZE_BYTES: 5000
+    volumes:
+      - type: 'bind'
+        source: './example'
+        target: '/var/www/html'
+
