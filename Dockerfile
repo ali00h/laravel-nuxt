@@ -27,10 +27,6 @@ RUN yarn -v
 COPY config/nginx.conf /etc/nginx/sites-enabled/default.conf
 # End Config Nginx
 
-# Change startup script
-COPY config/custom_script.sh /var/www/html/scripts/custom_script.sh
-RUN chmod +x /var/www/html/scripts/custom_script.sh
-# End change startup script
 
 # Install And Run Laravel
 # COPY config/laravel-worker.conf /etc/supervisor/conf.d/laravel-worker.conf
@@ -39,6 +35,12 @@ RUN rm -rf /var/www/html
 COPY ./my-laravel /var/www/html
 RUN composer install
 # End install And Run Laravel
+
+# Change startup script
+COPY config/custom_script.sh /var/www/html/scripts/custom_script.sh
+RUN chmod +x /var/www/html/scripts/custom_script.sh
+# End change startup script
+
 
 # Install And Run Nuxt
 RUN mkdir -p /usr/src/nuxt-app
