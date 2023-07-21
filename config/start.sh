@@ -1,10 +1,6 @@
 #!/bin/bash
 
-# start custom laravel-nuxt
 
-# echo "* * * * * php /var/www/html/cron.php > /dev/null 2>&1" >> /etc/crontabs/root
-# crond -l 2 -f > /dev/stdout 2> /dev/stderr &
-# end custom laravel-nuxt
 
 # Disable Strict Host checking for non interactive git clones
 
@@ -240,7 +236,3 @@ fi
 
 # Start supervisord and services
 exec /usr/bin/supervisord -n -c /etc/supervisord.conf
-
-echo "start nuxt at startup..."
-cd /usr/src/nuxt-app/
-npm run start

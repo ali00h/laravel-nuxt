@@ -1,7 +1,5 @@
 # Docker Laravel Nuxt
 
-[![Software License][ico-license]](LICENSE.md)
-
 This is a simple example for running a docker container with PHP-FPM and NGINX and NUXT in single container.
 You can change version of nginx, php and node in Dockerfile:
 
@@ -17,7 +15,7 @@ For active supervisor, uncomment this line in Dockerfile and write what you want
 # COPY config/laravel-worker.conf /etc/supervisor/conf.d/laravel-worker.conf
 ```
 
-If you want to add cronjob, you can uncomment this two line in `config/script.sh` and write your cronjob :
+If you want to add cronjob, you can uncomment this two line in `config/custom_script.sh` and write your cronjob :
 ```
 # echo "* * * * * php /var/www/html/cron.php > /dev/null 2>&1" >> /etc/crontabs/root
 # crond -l 2 -f > /dev/stdout 2> /dev/stderr &

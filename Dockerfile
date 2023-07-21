@@ -28,8 +28,8 @@ COPY config/nginx.conf /etc/nginx/sites-enabled/default.conf
 # End Config Nginx
 
 # Change startup script
-COPY config/start.sh /start.sh
-RUN chmod +x /start.sh
+COPY config/custom_script.sh /var/www/html/scripts/custom_script.sh
+RUN chmod +x /var/www/html/scripts/custom_script.sh
 # End change startup script
 
 # Install And Run Laravel
