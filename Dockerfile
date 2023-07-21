@@ -6,7 +6,7 @@ FROM node:${NODE_VERSION}-alpine AS node
 FROM richarvey/nginx-php-fpm:${NGINX_PHP_FPM_VERSION}
 
 LABEL maintainer="Ali00h"
-
+ENV RUN_SCRIPTS=1
 # RUN apk add --no-cache supervisor
 # RUN apk add --update nodejs
 
