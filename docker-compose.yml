@@ -7,11 +7,9 @@ services:
     restart: always
     ports:
       - "18094:80"
+      - "18095:3000"
     environment:
       TZ: Asia/Tehran
       MAX_UPLOAD_SIZE_BYTES: 5000
-    volumes:
-      - type: 'bind'
-        source: './example'
-        target: '/var/www/html'
+
 
