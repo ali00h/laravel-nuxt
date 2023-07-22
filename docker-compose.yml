@@ -2,14 +2,12 @@ version: "3"
 services:
   php:
     build: .
-    image: "ali00h/laravel-nuxt:v4"
-    container_name: DockerfileAll
+    image: "ali00h/laravel-nuxt:v1.0.5"
+    container_name: laravelnuxt1
     restart: always
     ports:
       - "18094:80"
-      - "18095:3000"
     environment:
       TZ: Asia/Tehran
-      MAX_UPLOAD_SIZE_BYTES: 5000
 
 

@@ -7,8 +7,7 @@ FROM richarvey/nginx-php-fpm:${NGINX_PHP_FPM_VERSION}
 
 LABEL maintainer="Ali00h"
 ENV RUN_SCRIPTS=1
-# RUN apk add --no-cache supervisor
-# RUN apk add --update nodejs
+
 
 ARG DOCKER_TAG
 ENV APP_VERSION=$DOCKER_TAG
@@ -25,6 +24,7 @@ RUN yarn -v
 
 # Start Config Nginx
 COPY config/nginx.conf /etc/nginx/sites-enabled/default.conf
+COPY config/nginx-proxy.conf /etc/nginx/sites-enabled/proxy.conf
 # End Config Nginx
 
 
@@ -47,13 +47,13 @@ RUN mkdir -p /usr/src/nuxt-app
 WORKDIR /usr/src/nuxt-app
 COPY ./my-nuxt /usr/src/nuxt-app/
 RUN npm install -g npm@8.1.0
+RUN npm install pm2 -g
 RUN npm install
 RUN npm run build
-EXPOSE 3000 80
+EXPOSE 80
 ENV NUXT_HOST=0.0.0.0
 ENV NUXT_PORT=3000
 ENV PATH ./node_modules/.bin/:$PATH
-#CMD npm run start
 # End install And Run Nuxt
 
 
