@@ -1,6 +1,6 @@
 # Docker Laravel Nuxt
 
-This is a simple example for running a docker container with PHP-FPM, NGINX and NUXT (PM2 starting) in single container.
+This is a simple example for running a docker container with PHP-FPM, NGINX, NUXT (PM2 starting) and Redis in single container.
 
 ## Build and Test
 Build and running docker container: 

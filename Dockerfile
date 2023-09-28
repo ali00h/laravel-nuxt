@@ -22,6 +22,10 @@ RUN npm install -g yarn --force
 RUN yarn -v
 # End install Node
 
+# Install Redis
+RUN apk add --no-cache redis
+# End install Redis
+
 # Start Config Nginx
 COPY config/nginx.conf /etc/nginx/sites-enabled/default.conf
 COPY config/nginx-proxy.conf /etc/nginx/sites-enabled/proxy.conf
